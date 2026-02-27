@@ -1,0 +1,7 @@
+name: CountingPlugin
+version: 1.0.0
+commands:
+  start:
+    type: jar
+    file: step-plugin-counting.jar
+    portEnvironmentVariableName: SERVER_PORT

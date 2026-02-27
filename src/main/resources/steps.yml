@@ -1,0 +1,70 @@
+steps:
+
+  - id: resetCounter
+    description: 'Resets the counter to zero.'
+    stepText: 'I reset the counter'
+    examples: ['I reset the counter']
+
+  - id: resetCounterSecret
+    description: 'Resets the counter to the value of SECRET_VARIABLE.'
+    stepText: 'I reset the counter to the secret variable'
+    examples: ['I reset the counter to the secret variable']
+    inputVariables: ['SECRET_VARIABLE']
+
+  - id: incrementCounter
+    description: 'Adds the given number to the counter.'
+    stepText: 'I add {increment} to the counter'
+    examples: ['I add 3 to the counter']
+
+  - id: incrementCounterDelay
+    description: 'Adds the given number to the counter.'
+    stepText: 'I add {increment} to the counter after waiting {timeout} {unit}'
+    examples:
+      - 'I add 3 to the counter after waiting 5 seconds'
+      - 'I add 3 to the counter after waiting 5000 ms'
+
+  - id: verifyCounter
+    description: 'Verifies that the counter is equal to the given total.'
+    stepText: 'I verify the counter is {total}'
+    examples: ['I verify the counter is 5']
+
+  - id: assignCounter
+    description: "Assigns the counter's value to the given variable."
+    stepText: 'I assign the counter to variable {variableName}'
+    examples: ['I assign the counter to variable "AndyCount"']
+    outputVariables: ['{variableName}']
+
+  - id: assignCounterSecret
+    description: "Assigns the counter's value to the SECRET_VARIABLE variable."
+    stepText: 'I assign the counter to the secret variable'
+    examples: ['I assign the counter to the secret variable']
+    outputVariables: ['SECRET_VARIABLE']
+
+
+parameters:
+
+  - name: increment
+    type: number
+    description: The number to add to the counter.
+
+  - name: timeout
+    type: number
+    description: The timeout value.
+
+  - name: unit
+    type: timeoutUnit
+    description: The timeout unit.
+
+  - name: total
+    type: number
+    description: The total value to verify.
+
+  - name: variableName
+    type: string
+    description: The Cycle variable name.
+
+
+enums:
+
+  - name: timeoutUnit
+    values: ['seconds', 'ms']
