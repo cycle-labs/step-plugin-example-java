@@ -1,7 +1,7 @@
 # Step Plugin Example for Java 
 
 This repository contains an example step plugin written in Java that uses the
-[Cycle Step Plugin SDK for Java with Spring Boot](https://dev.azure.com/cyclelabs/cycle/_git/cycle-step-plugin-sdk-java).
+**Cycle Step Plugin SDK for Java with Spring Boot**.
 
 
 ## Commands
